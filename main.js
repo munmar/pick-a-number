@@ -12,16 +12,3 @@ function generate() {
     var x = document.getElementById("randomise");
     x.innerHTML = Math.floor((Math.random() * 100) + 1);
 }
-
-var win = yourNumber > x;
-var lose = yourNumber < x;
-
-
-function decision() {
-    if(win == true){
-        alert("You Won!")
-    } else {
-        alert("You Lose!")
-    }
-   
-}  
