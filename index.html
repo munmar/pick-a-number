@@ -3,23 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>MathGame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Math Game</title>
     <script src="main.js"></script>
 </head>
 <body>
-<h1>Pick a Number</h1>
+    <nav class="ui menu grid">
+        <button onclick="modalOpenSettings()" class="ui icon button left item">
+            <i class=" large cog icon"></i>
+        </button>
+        <h1 class="ui header" style="margin: auto;">Pick a Number</h1>
+        <button onclick="modalOpenInfo()" class="ui icon button right item">
+            <i class="large info circle icon"></i>
+        </button>
+    </nav>
 
-<section id="myNumber" onclick="askFor()">My Number</section>
-<div class="container">
-    <p id="numbers"></p>
-</div>
+    <!-- MINI INFO MODAL START-->
+    <div class="ui mini modal info">
+        <div class="ui header">
+            How to Play
+        </div>
+        <div class="content">
+            <p>
+                The aim of the game is to guess the same number as the house in order to win.
+                <ol>
+                    <li>Click on the 'My Number' box to make your guess.</li>
+                    <li>Once you have done that, click the 'House' box to initiate the house's guess.</li>
+                </ol>
+                Good Luck!
+            </p>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+    <!-- MODAL END-->
+    <!-- MINI SETTINGS MODAL START -->
+    <div class="ui mini modal settings">
+        <div class="ui header">
+            Settings
+        </div>
+        <div class="content">
+            <div class="ui toggle checkbox">
+                <input type="checkbox" name="public">
+                <label>
+                    <i class="moon icon"></i>
+                    Dark Mode
+                </label>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+    <!-- MINI MODAL END -->
+
+    <section id="myNumber" onclick="askFor()">My Number</section>
+    <div class="container">
+        <p id="numbers"></p>
+    </div>
 
 
-<section id="houseNumber" onclick="generate()">House</section>
-<div class="container">
-    <p id="randomise"></p>
-</div>  
+    <section id="houseNumber">House</section>
+    <div class="container">
+        <div id="loader" class="ui centered inline loader"></div>
+        <p id="randomise"></p>
+    </div>  
 
 
 </body>
