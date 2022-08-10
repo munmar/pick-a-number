@@ -20,6 +20,28 @@
             <i class="large info circle icon"></i>
         </button>
     </nav>
+    
+    <div class="container">
+        <div class="card">
+            <div id="myNumber">My Number</div>
+            <div class="answer-container">
+                <p id="numbers"></p>
+            </div>
+        </div>
+        <div class="card">
+            <div id="deal" onclick="dealHand()">Deal</div>
+        </div> 
+        <div class="card">
+            <div id="houseNumber">House</div>
+            <div class="answer-container">
+                <div id="loader" class="ui centered inline loader"></div>
+                <p id="randomise"></p>
+            </div>
+        </div> 
+    </div>
+    <div id="result">
+        
+    </div>
 
     <!-- MINI INFO MODAL START-->
     <div class="ui mini modal info">
@@ -66,19 +88,6 @@
         </div>
     </div>
     <!-- MINI MODAL END -->
-
-    <section id="myNumber" onclick="askFor()">My Number</section>
-    <div class="container">
-        <p id="numbers"></p>
-    </div>
-
-
-    <section id="houseNumber">House</section>
-    <div class="container">
-        <div id="loader" class="ui centered inline loader"></div>
-        <p id="randomise"></p>
-    </div>  
-
 
 </body>
 </html>
