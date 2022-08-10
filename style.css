@@ -1,22 +1,53 @@
 body {
-    background-color: rgba(252, 243, 126, 0.274);
+    background-color: rgba(8, 121, 4, 0.616) !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card {
+    justify-content: space-between;
 }
 
 h1 {
-display: block;
-color: rgb(0, 0, 0);
-text-align: center;
-font-size: 3em;
--webkit-text-fill-color: white;
--webkit-text-stroke-width: 3px;
--webkit-text-stroke-color: black;
-text-shadow: 2px 2px 5px red;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 3em;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 2px 2px 5px grey;
 }
 
 
 #myNumber {
     border: 12px double black;
-    color: red;
+    color: white;
+    padding: 20px;
+    margin: 70px auto 10px auto;
+    width: 250px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#houseNumber {
+    border: 12px double black;
+    color: white;
+    padding: 20px;
+    margin: 70px auto 10px auto;
+    width: 250px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#deal {
+    border: 12px double black;
+    color: white;
+    background-color: #2185D0;
     padding: 20px;
     margin: 70px auto 10px auto;
     width: 250px;
@@ -24,18 +55,11 @@ text-shadow: 2px 2px 5px red;
     font-size: 2rem;
     cursor: pointer;
 }
-
-#houseNumber {
-    border: 12px double black;
-    color: red;
-    padding: 20px;
-    margin: 70px auto 10px auto;
-    width: 250px;
-    text-align: center;
-    font-size: 2rem;
+#deal:hover {
+    background-color: #127ac9;
 }
 
-.container {
+.answer-container {
     width: 250px;
     height: auto;
     overflow: hidden;
@@ -47,5 +71,14 @@ text-shadow: 2px 2px 5px red;
 
 p {
     text-align: center;
-    font-size: 14px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#result {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 50px;
+    margin: 10px;
 }
