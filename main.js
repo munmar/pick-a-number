@@ -1,10 +1,14 @@
-//This asks the user for input in the form of a pop up text box, then displays the chosen value accordingly
-function askFor() {
-    let yourNumber = prompt("Pick a number between 1-10.", "Type here...");
-    document.getElementById("numbers").innerHTML = yourNumber;
+// User needs to start the game (press deal)
+const dealHand = () => {
+    // User is generated a random number
+    let yourNumber = generate()
+    // Then House can generate number automatically
+    let houseNumber = generate()
+
+    document.getElementById('numbers').innerHTML = yourNumber;
 
     document.getElementById('loader').classList.add('active')
-    let houseNumber = generate()
+    // House guess not allowed until user input
     setTimeout(function() {
         setTimeout(function() {
             loader()
@@ -12,17 +16,28 @@ function askFor() {
         document.getElementById("randomise").innerHTML = houseNumber
     }, 2000)
 
-    
-    scores.you.push(Number(yourNumber))
-    scores.house.push(houseNumber)
-
-    if (scores.you[0] === scores.house[0]){
+    // Evaluate answers and decide winner
+    if (yourNumber > houseNumber){
         console.log('You Win')
-    } else {
+        setTimeout(function() {
+            document.getElementById('result').innerHTML = 'You Win!'}, 2000)
+    } else if (yourNumber < houseNumber) {
         console.log('You lose')
+        setTimeout(function() {
+            document.getElementById('result').innerHTML = 'You Lose!'}, 2000)
+    } else {
+        console.log("It's a draw. Go to War.")
+        setTimeout(function() {
+            document.getElementById('result').innerHTML = 'Draw! Sudden Death'}, 2000)
+        
     }
+    // reset for new game
+    setTimeout(function(){
+        window.location.reload();
+    }, 5000);
 }
 
+// loader element
 function loader() {
     document.getElementById('loader').classList.remove('active')
 }
@@ -45,15 +60,4 @@ function modalOpenInfo() {
 };
 
 
-// User needs to guess number via input
-// The input should then disappear after the guess and should be replaced by guess
-// Then House guess can generate automatically
-// House guess not allowed until user input
-// Evaluate answers and decide winner, reset board
 // Record Results in the side or on a popup (perhaps a little button in bottom right corner with the stats etc.)
-
-let scores = {
-    you: [],
-    house: []
-}
-console.log(scores)
